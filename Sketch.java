@@ -46,5 +46,5 @@ public class Sketch extends PApplet {
     ellipse(width/2,(float) (height*.2625), width/20, height/20);
   }
   
-  // define other methods down here.
+
 }
