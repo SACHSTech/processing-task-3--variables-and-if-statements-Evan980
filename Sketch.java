@@ -6,17 +6,9 @@ public class Sketch extends PApplet {
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
-  public void settings() {
-	// put your size call here
-    size(400, 400);
-  }
-
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
-  public void setup() {
-    background(210, 255, 173);
+    public void setup() {
+    //Set background to blue
+    background(135, 205, 235);
   }
 
   /**
@@ -24,12 +16,34 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
+	// Stroke settings for foreground
+    stroke(0, 255, 0);
+    strokeWeight(4);
 
-    stroke(255);
-    line(50, 125, 70, 50);  
+    fill(140, 70, 20);
+
+  //Foreground
+    rect(width/-20, (float) (height*.9375),(float) (height*1.1), height);
+   
+  //Roof
+    triangle(width/2,(float)(height*.15),(float) (width*.775),(float) (height*.375),(float) (width*.225),(float) (height*.375));
+
+  //Body of house
+    rect((float) (width*.225),(float) (height*.375),(float) (width*.55),(float) (height*.375));
+
+  // Colour and stroke settings for sun
+    fill(255, 255, 0);
+    strokeWeight(1);
+    stroke(0);
+
+  //Sun
+    ellipse(width*0, height*0, width/2, height/2);
+
+  //Colour for window
+    fill(255, 255, 255);
+
+  //Window
+    ellipse(width/2,(float) (height*.2625), width/20, height/20);
   }
   
   // define other methods down here.
