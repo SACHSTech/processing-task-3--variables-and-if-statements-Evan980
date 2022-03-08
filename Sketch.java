@@ -6,6 +6,11 @@ public class Sketch extends PApplet {
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
+  public void settings() {
+    // put your size call here
+      size(400, 400);
+    }
+
     public void setup() {
     //Set background to blue
     background(135, 205, 235);
@@ -44,6 +49,16 @@ public class Sketch extends PApplet {
 
   //Window
     ellipse(width/2,(float) (height*.2625), width/20, height/20);
+
+  //Set variables for time
+    int d = day();
+    int m = month();
+    int y = year();
+
+    String s = String.valueOf(d);
+    fill(4, 0, 120);
+    textSize(15);
+    text(month() + "-" + day() + "-" + year(), 0, 300);
   }
   
 
