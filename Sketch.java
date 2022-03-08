@@ -1,7 +1,10 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
+  Random r = new Random();
+
+  double randomx = random(-width, width);
+  double randomy = random(-300, 300);
 	
   /**
    * Called once at the beginning of execution, put your size all in this method
@@ -42,7 +45,26 @@ public class Sketch extends PApplet {
     stroke(0);
 
   //Sun
-    ellipse(width*0, height*0, width/2, height/2);
+    float sunX = r.nextInt(400);
+    float sunY = r.nextInt(250);
+
+    if (sunX <= 200) {
+      stroke(1);
+      fill(100, 250, 0);
+    }
+    else {
+      stroke(1);
+      fill(0, 250, 0);
+    }
+
+    if (sunY >= 180 && sunY <= 225) {
+      background(150, 20, 200);
+    }
+    else {
+      background(20, 200, 50);
+    }
+
+    ellipse((float) ((width*0 + randomx)), (float) ((height*0 + randomy)), width/2, height/2);
 
   //Colour for window
     fill(255, 255, 255);
