@@ -1,8 +1,6 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  Random r = new Random();
-
   double randomx = random(-width, width);
   double randomy = random(-300, 300);
 	
@@ -23,21 +21,6 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-	  
-	// Stroke settings for foreground
-    stroke(0, 255, 0);
-    strokeWeight(4);
-
-    fill(140, 70, 20);
-
-  //Foreground
-    rect(width/-20, (float) (height*.9375),(float) (height*1.1), height);
-   
-  //Roof
-    triangle(width/2,(float)(height*.15),(float) (width*.775),(float) (height*.375),(float) (width*.225),(float) (height*.375));
-
-  //Body of house
-    rect((float) (width*.225),(float) (height*.375),(float) (width*.55),(float) (height*.375));
 
   // Colour and stroke settings for sun
     fill(255, 255, 0);
@@ -45,19 +28,19 @@ public class Sketch extends PApplet {
     stroke(0);
 
   //Sun
-    float sunX = r.nextInt(400);
-    float sunY = r.nextInt(250);
+    float sunX = random(0, width);
+    float sunY = random(0, height);
 
-    if (sunX <= 200) {
-      stroke(1);
+    if (sunX <= 250) {
+      stroke(0);
       fill(100, 250, 0);
     }
     else {
-      stroke(1);
+      stroke(0);
       fill(0, 250, 0);
     }
 
-    if (sunY >= 180 && sunY <= 225) {
+    if (sunY >= 180 || sunY <= 225) {
       background(150, 20, 200);
     }
     else {
@@ -66,7 +49,20 @@ public class Sketch extends PApplet {
 
     ellipse((float) ((width*0 + randomx)), (float) ((height*0 + randomy)), width/2, height/2);
 
-  //Colour for window
+ // Stroke settings for foreground
+ stroke(0, 255, 0);
+ strokeWeight(4);
+
+ fill(140, 70, 20);
+
+  //Foreground
+    rect(width/-20, (float) (height*.9375),(float) (height*1.1), height);
+
+  //Roof
+    triangle(width/2,(float)(height*.15),(float) (width*.775),(float) (height*.375),(float) (width*.225),(float) (height*.375));
+
+  //Body of house
+    rect((float) (width*.225),(float) (height*.375),(float) (width*.55),(float) (height*.375)); //Colour for window
     fill(255, 255, 255);
 
   //Window
