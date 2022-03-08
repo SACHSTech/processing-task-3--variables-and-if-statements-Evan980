@@ -25,18 +25,18 @@ public class Sketch extends PApplet {
   // Colour and stroke settings for sun
     fill(255, 255, 0);
     strokeWeight(1);
-    stroke(0);
+    stroke(1);
 
   //Sun
     float sunX = random(0, width);
     float sunY = random(0, height);
 
     if (sunX <= 250) {
-      stroke(0);
+      stroke(1);
       fill(100, 250, 0);
     }
     else {
-      stroke(0);
+      stroke(1);
       fill(0, 250, 0);
     }
 
